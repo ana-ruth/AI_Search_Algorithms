@@ -1,8 +1,8 @@
 # AI Search Lab
 This project explores the implementation of five classical search algorithms. Three single-agent search algorithms for 8-puzzle, and two adversarial search algorithms for Tic-Tac-Toe.
 
-### Student
-Ana Herrera Cantarero
+### Webiste
+https://ana-ruth.github.io/AI_Search_Algorithms/
 
 
 ## How to Run

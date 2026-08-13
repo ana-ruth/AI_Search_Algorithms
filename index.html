@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>AI Search Lab</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./src/moduleA/stylesA.css" />
+    <link rel="stylesheet" href="./src/moduleB/stylesB.css" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Sora:wght@100..800&display=swap');
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+          <h1>AI Search Lab</h1>
+    </header>
+
+
+  <main>
+
+<!-- sidebar -->
+    <div id="sidebar">
+        <div class="tabs">
+            <span class="sidebar-section-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="margin-right:4px; vertical-align:middle;"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+                ACTIVE MODULE
+            </span>
+            
+            <p class="sidebar-subtitle">Search Algorithms</p>
+
+            <!-- tab buttons -->
+            <button class="tab-button active" onclick="switchTab(event, 'moduleA')">
+                <span class="icon">#</span> 8-Puzzle Solver
+            </button>
+        
+            <button class="tab-button" onclick="switchTab(event, 'moduleB')">
+                <span class="icon">🎮</span> Tic-Tac-Toe AI
+            </button>
+
+        </div>
+
+        <!-- shared dashboard -->
+        <div class="performance-div">
+            <span class="sidebar-section-title">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px; vertical-align:middle;"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                PERFORMANCE
+            </span>
+            <hr class="card-divider">
+            
+            <div id="dashboard-container"></div>            
+        </div>
+    </div>
+
+
+  <!-- Tab content -->
+    <div class="tab-content">
+
+        <!-- MODULE A: 8-PUZZLE -->
+        <div id="moduleA" class="tab-panel active">
+
+            <div class="top-section">
+                <h1>8-Puzzle Solver</h1>
+
+            <!-- use image or numbers buttons -->
+            <div class="puzzle-content-view">
+                    <button id="useImageBtn">Use Image</button>
+                    <button id="defaultBtn">Use Numbers</button>                
+                </div>                
+            </div>
+
+            <!-- board -->
+            <div id="boardA" class="grid"></div>
+
+            <!-- controls -->
+            <div class="puzzle-options">
+
+                <!-- algorithms -->
+                <div id="controlsA">
+                    <select id="algoSelect">
+                        <option value="bfs">BFS</option>
+                        <option value="dijkstra">Dijkstra</option>
+                        <option value="astar">A* (Manhattan)</option>
+                    </select>
+                    <button id="solveBtn">Solve</button>
+                </div>
+
+                <!-- pause/play, next, previous, shuffle buttons -->
+                <div class="solution-step-options">
+                    
+                    <button id="prevBtn">◀◀ </button>
+                    <button id="playPauseBtn">▶</button>
+                    <button id="nextBtn"> ▶▶</button>
+
+                    <button id="shuffleBtn">⇄ Shuffle</button>
+                </div>
+            </div>
+
+
+            <!-- file upload -->
+            <div class="import-container">
+                <span>Import State:</span>
+                <label for="imageUpload" class="file-upload-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    <span id="file-name-text">No file selected</span>
+                </label>
+                <input type="file" id="imageUpload" accept="image/png, image/jpeg">
+            </div>
+
+        </div>
+
+    
+        <!-- MODULE B -->
+    
+        <div id="moduleB" class="tab-panel">
+
+            <div class="header-section">
+                <h1>Tic-Tac-Toe with AI</h1>
+                <p class="subtitle">Real-time visualization of adversarial search algorithms</p>
+            </div>
+
+            <div class="main-ttt">
+
+                <!-- game board -->
+                <div class="tic-tac-toe">
+                    <div id="boardB" class="board"></div>
+                    <p id="status"></p>
+                </div>
+
+
+                <div id="controlsB">
+
+                    <!-- to choose game modes -->
+                    <label>Mode:</label>
+                    <select id="mode">
+                        <option value="human-ai">Human vs AI</option>
+                        <option value="ai-ai">AI vs AI</option>
+                        <option value="human-human">Human vs Human</option>
+                    </select>
+
+                    <!-- first turn -->
+                    <label>First Player:</label>
+                    <select id="firstPlayer">
+                        <option value="X">X starts</option>
+                        <option value="O">O starts</option>
+                    </select>
+
+                    <!-- AI algorithm -->
+                    <div id="algoX-container">
+                        <label>AI (X):</label>
+                        <select id="algoX">
+                            <option value="minimax">Minimax</option>
+                            <option value="alphabeta">Alpha-Beta</option>
+                        </select>
+                    </div>
+
+                    <!-- AI algorithm -->
+                    <div id="algoO-container">
+                    <label>AI (O):</label>
+                        <select id="algoO">
+                            <option value="minimax">Minimax</option>
+                            <option value="alphabeta">Alpha-Beta</option>
+                        </select>
+                    </div>
+
+                    <!-- Game controls -->
+                    <div id="gameFlowBtns">
+                        <button id="startBtn">Start Game</button>
+
+                        <button id="pauseBtn">▶</button>
+
+                    </div>
+
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </main>
+
+    <!-- Dashboard  -->
+    <script src="./src/shared/performance_dashboard.js"></script>
+
+    <!-- Module Scripts -->
+    <script src="./src/moduleA/puzzle-logic.js"></script>
+    <script src="./src/moduleA/puzzle-ui.js"></script>
+
+    <script src="./src/moduleB/tictactoe-logic.js"></script>
+    <script src="./src/moduleB/tictactoe-ui.js"></script>
+
+
+  <!-- Tab Switching -->
+  <script>
+    function switchTab(event, tabId) {
+        document.querySelectorAll(".tab-panel").forEach(el => el.classList.remove("active"));
+        document.querySelectorAll(".tab-button").forEach(el => el.classList.remove("active"));
+
+
+        // Mark selected tab as active
+        document.getElementById(tabId).classList.add("active");
+        event.target.classList.add("active");
+
+      // Reset dashboard when switching modules
+        if (window.Dashboard) {
+            window.Dashboard.reset();
+        }
+
+        if (tabId === "moduleB") {
+            window.Dashboard.update({ isSplitMode: true });
+        }
+    }
+  </script>
+
+
+</body>
+</html>

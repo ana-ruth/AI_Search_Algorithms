@@ -1,0 +1,216 @@
+html { 
+    height: 100%; 
+}
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    color: 0a090c;
+    background-color: #F8F7FF;
+    height: 100%;
+    font-family: "Google Sans", Arial, Tahoma, sans-serif;
+}
+
+
+strong, h2, p, h1{
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header{ 
+    border-bottom: 0.2vh solid #bfb7c5;
+}
+
+h1{
+    margin: 2vh 5vh;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* tabs */
+.tabs {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.tab-button.active {
+    color: #f5f5f6;
+    background-color: #000a17;
+    border:none ;
+    border-left: 0.5vh solid #b2fd4f;
+
+}
+
+.tab-panel {
+  display: none;
+} 
+
+
+.tab-panel.active {
+  display: block;
+}
+
+/* modules */
+.tab-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;  
+    align-content: center;
+    width: 100%;
+    padding: 2vh;
+    max-width: 90vh; 
+    margin: 0 auto;  
+}
+
+/* Sidebar */
+#sidebar {
+  background-color: #e2dfeb;
+  width: 50vh; 
+  height: 100vh;          
+  position: sticky;        
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  gap: 5vh;
+  padding: 5vh 3vh; 
+  box-sizing: border-box; 
+}
+
+/* Header Text */
+.sidebar-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #6b7280;
+  letter-spacing: 0.08em;
+  display: block;
+}
+
+.sidebar-subtitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 4px 0 12px 0;
+}
+
+/* Tab Buttons */
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tab-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.625rem 0.875rem; 
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: #4b5563;
+  font-size: 0.85rem;
+  font-weight: 500;
+  height: 7vh;
+  border-radius: 0.375rem; 
+  text-align: left;
+  transition: all 0.15s ease;
+  border: 1.5px solid rgba(86, 86, 86, 0.167);
+}
+
+.tab-button .icon {
+  margin-right: 0.625rem; 
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+/* Active State Styles */
+.tab-button.active {
+  color: #ffffff;
+  background-color: #0b132b; 
+}
+
+/* Performance Dashboard */
+.performance-div {
+  background-color: #1c1a36; 
+  padding: 1rem;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.25rem 0.75rem rgba(28, 26, 54, 0.15); 
+  color: #b1a6c0;
+  
+}
+
+.performance-div .sidebar-section-title {
+  color: #9ca3af;
+}
+
+.card-divider {
+  border: none;
+  border-top: 1px solid #2e2b54;
+  margin: 0.75rem 0; 
+}
+
+.performance-div > h2{
+  color: #ccc7d4;
+  margin: 0;
+  padding: 0.25rem 0;
+}
+
+/* Metrics */
+.metrics{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 1rem;
+}
+
+.metrics > div{
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+}
+
+.metrics > div > div > p{
+    color: #b2fd4f;
+    font-weight: 900;
+}
+
+.metrics > div > p{
+    color: #b2fd4f;
+    font-weight: 900;
+}
+
+.metric-label {
+    font-family: 'JetBrains Mono', 'SF Mono', 'Roboto Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em; 
+  text-transform: uppercase;
+}
+
+.metric-value {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;       
+  color: #a3e635; 
+  letter-spacing: -0.03em;
+  margin-top: 4px;
+}
+
+.metric-unit {
+  font-family: 'JetBrains Mono', 'SF Mono', 'Roboto Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #52517a;
+  margin-left: 6px;
+}
+

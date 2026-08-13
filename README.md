@@ -44,5 +44,3 @@ To switch between modules, click the tabs `8-Puzzle Solver` and `Tic-Tac-Toe` on
 ## Heuristic Justification
 Manhattan distance is admissible for the 8-puzzle because it counts the minimum number of moves each tile needs to reach the goal position for the solution. The estimated cost is less than the actual cost because each move consists of moving one tile at a time, so the distance is reduced at most by 1. The heuristic does not overestimate the actual distance, making it admissible and consistent for A* search.
 
-## Comparative Analysis Report
-Open the `Comparative_Analysis.pdf` file for report and screenshots of gameplay.
